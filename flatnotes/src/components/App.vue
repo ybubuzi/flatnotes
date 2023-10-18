@@ -67,7 +67,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 
 .home-view {
   max-width: 500px;

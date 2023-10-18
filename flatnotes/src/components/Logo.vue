@@ -32,7 +32,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 
 @media screen and (max-width: 500px) {
   .responsive-hide {

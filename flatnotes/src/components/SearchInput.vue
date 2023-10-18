@@ -7,7 +7,7 @@
         inputmode="search"
         class="form-control"
         :class="{ highlight: includeHighlightClass }"
-        placeholder="Search"
+        placeholder="搜索"
         v-model="searchTermInput"
       />
       <div class="input-group-append">
@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 
 @keyframes highlight {
   from {

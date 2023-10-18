@@ -158,9 +158,9 @@ export default {
 
     unhandledServerErrorToast: function () {
       this.$bvToast.toast(
-        "Unknown error communicating with the server. Please try again.",
+        "与服务器通信时出现未知错误。请再试一次。.",
         {
-          title: "Unknown Error",
+          title: "未知错误",
           variant: "danger",
           noCloseButton: true,
           toaster: "b-toaster-bottom-right",

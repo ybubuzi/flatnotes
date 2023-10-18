@@ -15,7 +15,7 @@
 
     <!-- Notes Loaded -->
     <div v-else class="d-flex flex-column align-items-center">
-      <p class="mini-header mb-1">RECENTLY MODIFIED</p>
+      <p class="mini-header mb-1">最近修改的</p>
       <a
         v-for="note in notes"
         :key="note.title"
@@ -30,7 +30,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 
 .mini-header {
   font-size: 12px;

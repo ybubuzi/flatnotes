@@ -17,7 +17,7 @@
         class="bttn"
         @click="$emit('logout')"
       >
-        <b-icon icon="box-arrow-right"></b-icon> Log Out
+        <b-icon icon="box-arrow-right"></b-icon>注销
       </button>
 
       <!-- New Note -->
@@ -27,9 +27,9 @@
         class="bttn"
         @click.prevent="navigate(constants.basePaths.new, $event)"
         v-b-tooltip.hover
-        title="Create a New Note"
+        title="创建新笔记"
       >
-        <b-icon icon="plus-circle"></b-icon> New
+        <b-icon icon="plus-circle"></b-icon> 新建
       </a>
 
       <!-- Theme Toggle -->
@@ -39,7 +39,7 @@
         class="bttn"
         @click="$emit('toggleTheme')"
         v-b-tooltip.hover
-        title="Toggle Theme"
+        title="切换主题"
       >
         <b-icon :icon="darkTheme ? 'sun' : 'moon'"></b-icon>
       </button>
@@ -50,7 +50,7 @@
         class="bttn"
         @click.prevent="navigate(azHref, $event)"
         v-b-tooltip.hover
-        title="Show All Notes"
+        title="显示所有笔记"
         >A-Z</a
       >
 
@@ -61,7 +61,7 @@
         class="bttn"
         @click="$emit('search')"
         v-b-tooltip.hover
-        title="Search (Keyboard Shortcut: /)"
+        title="搜索（键盘快捷键：/ ）"
       >
         <b-icon icon="search"></b-icon>
       </button>

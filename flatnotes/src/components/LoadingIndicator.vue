@@ -15,7 +15,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 
 p {
   color: var(--colour-text-muted);

@@ -65,7 +65,7 @@
               <span
                 class="last-modified d-none d-md-block"
                 v-b-tooltip.hover
-                title="Last Modified"
+                title="最后修改"
               >
                 {{ result.lastModifiedAsString }}
               </span>
@@ -88,7 +88,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 
 .sort-select {
   padding-inline: 6px;
@@ -121,7 +121,7 @@
 </style>
 
 <style lang="scss">
-@import "../colours";
+@import "/src/colours";
 
 .match {
   font-weight: bold;
@@ -160,7 +160,7 @@ export default {
   data: function () {
     return {
       searchFailed: false,
-      searchFailedMessage: "Failed to load Search Results",
+      searchFailedMessage: "加载搜索结果失败",
       searchFailedIcon: null,
       searchResults: null,
       searchResultsIncludeHighlights: null,

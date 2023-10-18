@@ -40,7 +40,7 @@
             class="bttn"
             @click="setEditMode(true)"
             v-b-tooltip.hover
-            title="Keyboard Shortcut: e"
+            title="键盘快捷键: E"
           >
             <b-icon icon="pencil-square"></b-icon> Edit
           </button>
@@ -99,7 +99,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../colours";
+@import "/src/colours";
 @import "../mixins";
 
 .title {
@@ -132,7 +132,7 @@
 @import "prismjs/themes/prism.css";
 @import "@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css";
 
-@import "../colours";
+@import "/src/colours";
 @import "../mixins";
 @import "../toastui-editor-theme.scss";
 
