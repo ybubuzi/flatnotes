@@ -14,7 +14,9 @@ COPY package.json package-lock.json .htmlnanorc ./
 RUN npm ci
 
 COPY flatnotes/src ./flatnotes/src
-RUN npm run build
+RUN npm run 
+
+
 
 # Runtime Container
 FROM python:3.11-slim-bullseye
@@ -36,6 +38,9 @@ RUN apt update && apt install -y gosu \
 RUN pip install pipenv
 
 WORKDIR ${APP_PATH}
+
+​
+RUN pip3 config  set global.index-url http://mirrors.aliyun.com/pypi/simple/
 
 COPY LICENSE Pipfile Pipfile.lock ./
 RUN pipenv install --deploy --ignore-pipfile --system
