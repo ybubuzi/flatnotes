@@ -1,13 +1,13 @@
 version: "3"
 services:
   flatnotes:
+    image: bubuzi/flatnotes:0.0.1
     container_name: flatnotes
     build:
       context: .
       dockerfile: Dockerfile
       args:
-        BUILDPLATFORM: linux/amd64 
-
+        BUILDPLATFORM: linux/amd64  
     environment:
       PUID: 1000
       PGID: 1000
