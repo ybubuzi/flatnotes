@@ -4,7 +4,10 @@ services:
     container_name: flatnotes
     build:
       context: .
-    dockerfile: Dockerfile
+      dockerfile: Dockerfile
+      args:
+        BUILDPLATFORM: linux/amd64 
+
     environment:
       PUID: 1000
       PGID: 1000
@@ -13,9 +16,7 @@ services:
       FLATNOTES_PASSWORD: "bubuzi169"
       FLATNOTES_SECRET_KEY: "amnSOgscsCeifraeRtonLrhadoera"
     volumes:
-      - "./data:/data"
-      # Optional. Allows you to save the search index in a different location: 
-      # - "./index:/data/.flatnotes"
+      - "./data:/data" 
     ports:
       - "40080:8080"
     restart: unless-stopped

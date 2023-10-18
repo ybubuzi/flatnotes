@@ -1,7 +1,7 @@
 ARG BUILD_DIR=/build
 
 # Build Container
-FROM --platform=$BUILDPLATFORM python:3.11-slim-bullseye AS build
+FROM --platform=linux/amd64  python:3.11-slim-bullseye AS build
 
 ARG BUILD_DIR
 
