@@ -28,7 +28,7 @@
           type="text"
           class="h2 title-input flex-grow-1"
           v-model="titleInput"
-          placeholder="Title"
+          placeholder="请输入标题"
         />
 
         <!-- Buttons -->
@@ -42,7 +42,7 @@
             v-b-tooltip.hover
             title="键盘快捷键: E"
           >
-            <b-icon icon="pencil-square"></b-icon> Edit
+            <b-icon icon="pencil-square"></b-icon> 编辑
           </button>
 
           <!-- Delete -->
@@ -52,7 +52,7 @@
             class="bttn"
             @click="deleteNote"
           >
-            <b-icon icon="trash"></b-icon> Delete
+            <b-icon icon="trash"></b-icon> 删除
           </button>
 
           <!-- Cancel -->
@@ -62,7 +62,7 @@
             class="bttn"
             @click="confirmCancelNote"
           >
-            <b-icon icon="arrow-return-left"></b-icon> Cancel
+            <b-icon icon="arrow-return-left"></b-icon> 取消
           </button>
 
           <!-- Save -->
@@ -72,7 +72,7 @@
             class="bttn"
             @click="saveNote"
           >
-            <b-icon icon="check-square"></b-icon> Save
+            <b-icon icon="check-square"></b-icon> 保存
           </button>
         </div>
       </div>
@@ -228,7 +228,7 @@ export default {
       initialContent: null,
       noteLoadFailed: false,
       noteLoadFailedIcon: null,
-      noteLoadFailedMessage: "Failed to load Note",
+      noteLoadFailedMessage: "无法加载笔记",
       viewerOptions: {
         customHTMLRenderer: customHTMLRenderer,
         plugins: [codeSyntaxHighlight],
@@ -279,7 +279,7 @@ export default {
             error.response.status == 404
           ) {
             parent.noteLoadFailedIcon = "file-earmark-x";
-            parent.noteLoadFailedMessage = "Note not found";
+            parent.noteLoadFailedMessage = "找不到笔记";
             parent.noteLoadFailed = true;
           } else {
             EventBus.$emit("unhandledServerError");
@@ -291,7 +291,7 @@ export default {
     getContentForEditor: function () {
       let draftContent = localStorage.getItem(this.currentNote.title);
       if (draftContent) {
-        if (confirm("Do you want to resume the saved draft?")) {
+        if (confirm("是否要恢复保存的草稿?")) {
           return draftContent;
         } else {
           localStorage.removeItem(this.currentNote.title);
@@ -322,12 +322,12 @@ export default {
         if (draftContent) {
           this.$bvModal
             .msgBoxConfirm(
-              "There is an unsaved draft of this note stored in this browser. Do you want to resume the draft version or delete it?",
+              "此浏览器中存储有此笔记的未保存的草稿。您想恢复草稿还是删除它?",
               {
                 centered: true,
-                title: "Resume Draft?",
-                okTitle: "Resume Draft",
-                cancelTitle: "Delete Draft",
+                title: "恢复草稿?",
+                okTitle: "恢复草稿",
+                cancelTitle: "删除草稿",
                 cancelVariant: "danger",
               }
             )
@@ -399,9 +399,9 @@ export default {
 
     existingTitleToast: function () {
       this.$bvToast.toast(
-        "A note with this title already exists. Please try again with a new title.",
+        "已存在具有此标题的笔记。请使用新标题重试.",
         {
-          title: "Duplicate ✘",
+          title: "重复 ✘",
           variant: "danger",
           noCloseButton: true,
           toaster: "b-toaster-bottom-right",
@@ -420,7 +420,7 @@ export default {
         this.titleInput = this.titleInput.trim();
       }
       if (!this.titleInput) {
-        this.$bvToast.toast("Cannot save note without a title ✘", {
+        this.$bvToast.toast("不能保存没有标题的笔记 ✘", {
           variant: "danger",
           noCloseButton: true,
           toaster: "b-toaster-bottom-right",
@@ -430,7 +430,7 @@ export default {
       const reservedCharacters = /[<>:"/\\|?*]/;
       if (reservedCharacters.test(this.titleInput)) {
         this.$bvToast.toast(
-          'Due to filename restrictions, the following characters are not allowed in a note title: <>:"/\\|?*',
+          '由于文件名限制，便笺标题中不允许使用以下字符: <>:"/\\|?*',
           {
             variant: "danger",
             noCloseButton: true,
@@ -509,7 +509,7 @@ export default {
     },
 
     noteSavedToast: function () {
-      this.$bvToast.toast("Note saved ✓", {
+      this.$bvToast.toast("已保存笔记 ✓", {
         variant: "success",
         noCloseButton: true,
         toaster: "b-toaster-bottom-right",
@@ -535,11 +535,11 @@ export default {
       ) {
         this.$bvModal
           .msgBoxConfirm(
-            `Are you sure you want to close the note '${this.currentNote.title}' without saving?`,
+            `是否确实要关闭便笺‘${this.CurrentNote.title}’而不保存？`,
             {
               centered: true,
-              title: "Confirm Closure",
-              okTitle: "Yes, Close",
+              title: "确认弹窗",
+              okTitle: "是的, 关闭",
               okVariant: "warning",
             }
           )
@@ -557,11 +557,11 @@ export default {
       let parent = this;
       this.$bvModal
         .msgBoxConfirm(
-          `Are you sure you want to delete the note '${this.currentNote.title}'?`,
+          `您确定要删除笔记 '${this.currentNote.title}' 吗?`,
           {
             centered: true,
-            title: "Confirm Deletion",
-            okTitle: "Delete",
+            title: "删除确认",
+            okTitle: "删除",
             okVariant: "danger",
           }
         )

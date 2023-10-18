@@ -150,7 +150,7 @@ export default {
             typeof error.response !== "undefined" &&
             [400, 422].includes(error.response.status)
           ) {
-            parent.$bvToast.toast("Incorrect login credentials ✘", {
+            parent.$bvToast.toast("登录凭证不正确 ✘", {
               variant: "danger",
               noCloseButton: true,
               toaster: "b-toaster-bottom-right",

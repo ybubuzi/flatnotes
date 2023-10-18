@@ -73,7 +73,6 @@ export default {
     route: function () {
       let path = window.location.pathname.split("/");
       let basePath = `/${path[1]}`;
-
       this.$bvModal.hide("search-modal");
 
       // Home Page
@@ -87,14 +86,14 @@ export default {
 
       // Search
       else if (basePath == constants.basePaths.search) {
-        this.updateDocumentTitle("Search");
+        this.updateDocumentTitle("搜索");
         this.searchTerm = helpers.getSearchParam(constants.params.searchTerm);
         this.currentView = this.views.search;
       }
 
       // New Note
       else if (basePath == constants.basePaths.new) {
-        this.updateDocumentTitle("New Note");
+        this.updateDocumentTitle("新建笔记");
         this.currentView = this.views.note;
       }
 
@@ -107,7 +106,7 @@ export default {
 
       // Login
       else if (basePath == constants.basePaths.login) {
-        this.updateDocumentTitle("Log In");
+        this.updateDocumentTitle("登录");
         this.currentView = this.views.login;
       }
     },
@@ -134,7 +133,7 @@ export default {
     },
 
     noteDeletedToast: function () {
-      this.$bvToast.toast("Note deleted ✓", {
+      this.$bvToast.toast("已删除笔记 ✓", {
         variant: "success",
         noCloseButton: true,
         toaster: "b-toaster-bottom-right",

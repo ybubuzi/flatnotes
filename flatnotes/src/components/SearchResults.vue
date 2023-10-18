@@ -26,7 +26,7 @@
             :value="option"
             class="p-0"
           >
-            Order: {{ sortOptionToString(option) }}
+            排序: {{ sortOptionToString(option) }}
           </option>
         </select>
 
@@ -314,9 +314,9 @@ export default {
 
     sortOptionToString: function (sortOption) {
       let sortOptionStrings = {
-        0: "Score",
-        1: "Title",
-        2: "Last Modified",
+        0: "评分",
+        1: "标题",
+        2: "更新时间",
       };
       return sortOptionStrings[sortOption];
     },
