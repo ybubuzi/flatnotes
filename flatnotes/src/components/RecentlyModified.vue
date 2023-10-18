@@ -30,7 +30,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "/src/colours";
+@import "../colours";
 
 .mini-header {
   font-size: 12px;

@@ -88,7 +88,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "/src/colours";
+@import "../colours";
 
 .sort-select {
   padding-inline: 6px;
@@ -121,7 +121,7 @@
 </style>
 
 <style lang="scss">
-@import "/src/colours";
+@import "../colours";
 
 .match {
   font-weight: bold;

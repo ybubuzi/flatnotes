@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "/src/colours";
+@import "../colours";
 
 @keyframes highlight {
   from {

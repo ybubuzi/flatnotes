@@ -99,7 +99,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "/src/colours";
+@import "../colours";
 @import "../mixins";
 
 .title {
@@ -132,7 +132,7 @@
 @import "prismjs/themes/prism.css";
 @import "@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css";
 
-@import "/src/colours";
+@import "../colours";
 @import "../mixins";
 @import "../toastui-editor-theme.scss";
 
