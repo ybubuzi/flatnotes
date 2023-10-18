@@ -35,12 +35,13 @@ RUN mkdir -p ${FLATNOTES_PATH}
 RUN apt update && apt install -y gosu \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
 RUN pip install pipenv
 
 WORKDIR ${APP_PATH}
 
-​
-RUN pip3 config  set global.index-url http://mirrors.aliyun.com/pypi/simple/
+
 
 COPY LICENSE Pipfile Pipfile.lock ./
 RUN pipenv install --deploy --ignore-pipfile --system
