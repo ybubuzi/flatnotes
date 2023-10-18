@@ -14,7 +14,7 @@ COPY package.json package-lock.json .htmlnanorc ./
 RUN npm ci
 
 COPY flatnotes/src ./flatnotes/src
-RUN npm run 
+RUN npm run  build
 
 
 
@@ -44,7 +44,7 @@ WORKDIR ${APP_PATH}
 
 
 COPY LICENSE Pipfile Pipfile.lock ./
-RUN pipenv install --deploy --ignore-pipfile --system
+RUN pipenv install --verbose --deploy --ignore-pipfile --system
 
 COPY flatnotes ./flatnotes
 COPY --from=build ${BUILD_DIR}/flatnotes/dist ./flatnotes/dist

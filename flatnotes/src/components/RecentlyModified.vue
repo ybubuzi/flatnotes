@@ -84,7 +84,7 @@ export default {
             });
           } else {
             parent.loadingFailedMessage =
-              "Click the 'New' button at the top of the page to add your first note";
+              "单击页面顶部的“新建”按钮添加您的第一个注释";
             parent.loadingFailedIcon = "pencil";
             parent.loadingFailed = true;
           }
